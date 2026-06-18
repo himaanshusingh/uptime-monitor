@@ -17,7 +17,7 @@ This log documents the collaboration workflow and prompting strategies utilized 
 Here is the sequence of technical prompts used to direct the AI assistant through the application's lifecycle:
 
 1. **Scaffolding and Setup Plan**:
-   - _Prompt_: _"Design and scaffold a lightweight uptime monitoring application based on the attached technical specifications. The stack must utilize the MERN (MongoDB, Express, React, Node.js) architecture, styled using Tailwind CSS v4. Implement a comprehensive README.md file documenting the architecture, verification workflow, and deployment blueprint. Adhere to a strict constraint of avoiding heavy external charting or UI libraries to keep the bundle size optimized."_
+   - _Prompt_: _"Design and architectured a lightweight uptime monitoring application based on the attached technical specifications. The stack must utilize the MERN (MongoDB, Express, React, Node.js) architecture, styled using Tailwind CSS v4. Implement a comprehensive README.md file documenting the architecture, verification workflow, and deployment blueprint. Adhere to a strict constraint of avoiding heavy external UI libraries to keep the bundle size optimized."_
    - _Action_: Analyzed PDF requirements, mapped out repository structure (MongoDB, Express, React, Node, Tailwind CSS v4, Docker Compose), and created the implementation plan artifact.
 2. **Scaffolding Vite React**:
    - _Prompt_: _"Initialize the frontend application using Vite with the React-JavaScript template. Ensure the scaffolding execution runs in non-interactive mode using automated flags to fit within our headless setup."_
