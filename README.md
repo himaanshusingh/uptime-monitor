@@ -54,6 +54,57 @@ uptime-monitor/
 
 ---
 
+## ⚙️ Environment Configuration
+
+The application utilizes environment variables to manage configurations such as the database connection string and API port. A template file is provided at [backend/.env.example](file:///c:/accio-job/7.projects/uptime-monitor/backend/.env.example).
+
+### Setup Instructions
+
+1. **Navigate to the backend directory**:
+
+   ```bash
+   cd backend
+   ```
+
+2. **Generate the configuration file** by copying the template:
+   - **Linux/macOS**:
+     ```bash
+     cp .env.example .env
+     ```
+   - **Windows (PowerShell)**:
+     ```powershell
+     Copy-Item .env.example .env
+     ```
+
+3. **Configure the variables** in the newly created `backend/.env`:
+   - `PORT`: The port on which the Express server runs (defaults to `3000`).
+   - `MONGO_URI`: The connection URI for your MongoDB instance. You can set this to a local server or a hosted cloud cluster (e.g., MongoDB Atlas).
+
+   _Example configuration:_
+
+   ```env
+   PORT=3000
+   MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/uptimemonitor
+   ```
+
+### Running with Docker Compose
+
+When running via Docker Compose (`docker compose up --build`), environment variables are configured automatically:
+
+- The backend container is preconfigured to resolve to the database container using `mongodb://db:27017/uptimemonitor`.
+- Creating a manual `.env` file is optional for Docker Compose setups.
+- To override any default variables inside Docker Compose, you can place a `.env` file in the root directory or modify the `environment:` definitions inside `docker-compose.yml`.
+
+### Frontend API URL Configuration (Optional)
+
+The React frontend (built with Vite) proxies API requests to the backend server.
+
+- By default, it proxies to `http://localhost:3000`.
+- To specify a custom backend endpoint for the frontend proxy, you can set the environment variable:
+  - `VITE_BACKEND_URL`: The URL of your API service (e.g., `http://my-api-server:3000`).
+
+---
+
 ## ⚡ 1-Line Setup
 
 To spin up the database, backend API, and frontend dashboard locally, run:
