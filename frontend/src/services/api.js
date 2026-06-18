@@ -76,4 +76,4 @@ class ApiService {
   }
 }
 
-export const api = new ApiService();
+export const api = new ApiService(import.meta.env.VITE_API_BASE_URL || '/api');
