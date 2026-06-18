@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: #0b0f19;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(17, 24, 39, 0.8) 0, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(59, 130, 246, 0.08) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(124, 58, 237, 0.08) 0, transparent 50%);
+  background-attachment: fixed;
+  color: #f3f4f6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Webkit Scrollbars for Premium Aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(55, 65, 81, 0.8);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 85, 99, 0.9);
+}
+
+/* Glowing Pulsing Animations for Status Badges */
+@keyframes status-pulse-up {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 8px 4px rgba(16, 185, 129, 0.2);
+  }
+}
+
+@keyframes status-pulse-down {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 8px 4px rgba(239, 68, 68, 0.2);
+  }
+}
+
+@keyframes status-pulse-pending {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 8px 4px rgba(245, 158, 11, 0.2);
+  }
+}
+
+.pulse-glowing-up {
+  animation: status-pulse-up 2s infinite ease-in-out;
+}
+
+.pulse-glowing-down {
+  animation: status-pulse-down 2s infinite ease-in-out;
+}
+
+.pulse-glowing-pending {
+  animation: status-pulse-pending 2s infinite ease-in-out;
+}
