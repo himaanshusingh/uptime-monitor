@@ -101,7 +101,7 @@ The React frontend (built with Vite) proxies API requests to the backend server.
 
 - By default, it proxies to `http://localhost:3000`.
 - To specify a custom backend endpoint for the frontend proxy, you can set the environment variable:
-  - `VITE_BACKEND_URL`: The URL of your API service (e.g., `http://my-api-server:3000`).
+  - `VITE_API_BASE_URL`: The URL of your API service (e.g., `http://my-api-server:3000/api`).
 
 ---
 
