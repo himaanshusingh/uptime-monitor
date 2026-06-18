@@ -17,7 +17,7 @@ app.use("/api/monitors", monitorRoutes);
 app.use("/api/stats", statsRoutes);
 
 // Default Route
-app.get("/", () => res.send("API running successfully"));
+app.get("/", (req, res) => res.send("API is running..."));
 
 // Global Error Handler Middleware
 app.use((err, req, res, next) => {
