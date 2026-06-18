@@ -15,7 +15,9 @@ app.use(express.json());
 // API Routes mounting
 app.use("/api/monitors", monitorRoutes);
 app.use("/api/stats", statsRoutes);
-app.get("/", "API running successfully");
+
+// Default Route
+app.get("/", () => res.send("API running successfully"));
 
 // Global Error Handler Middleware
 app.use((err, req, res, next) => {
